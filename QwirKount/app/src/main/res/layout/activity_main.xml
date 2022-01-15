@@ -21,6 +21,17 @@
         app:layout_constraintRight_toLeftOf="@id/titleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/playerListView"
         />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/titleTextView"
+        app:layout_constraintLeft_toRightOf="@id/playerListView"
+        android:layout_marginTop="10dp"
+        />
+
+    
 
 </androidx.constraintlayout.widget.ConstraintLayout>

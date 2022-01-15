@@ -7,12 +7,12 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="210mm"
-   height="297mm"
-   viewBox="0 0 210 297"
+   width="408.65561mm"
+   height="300.65204mm"
+   viewBox="0 0 408.65561 300.65204"
    version="1.1"
    id="svg8"
-   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
    sodipodi:docname="drawing.svg">
   <defs
      id="defs2" />
@@ -23,18 +23,22 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.38638632"
-     inkscape:cx="841.45238"
-     inkscape:cy="527.59731"
+     inkscape:zoom="0.54643277"
+     inkscape:cx="492.10184"
+     inkscape:cy="162.12579"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
      showgrid="false"
-     inkscape:window-width="1268"
-     inkscape:window-height="650"
-     inkscape:window-x="-5"
-     inkscape:window-y="0"
-     inkscape:window-maximized="0" />
+     inkscape:window-width="2880"
+     inkscape:window-height="1526"
+     inkscape:window-x="-11"
+     inkscape:window-y="907"
+     inkscape:window-maximized="1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
   <metadata
      id="metadata5">
     <rdf:RDF>
@@ -50,16 +54,17 @@
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     transform="translate(-5.9819136,19.437738)">
     <rect
-       style="fill:#000000;fill-opacity:0.325301;stroke-width:1.1;stroke-opacity:0"
+       style="fill:#000000;fill-opacity:0.32530099;stroke-width:1.10000002;stroke-opacity:0"
        id="rect10"
        width="195.79167"
        height="262.31549"
        x="8.3154764"
        y="18.898809" />
     <rect
-       style="fill:#00ffff;fill-opacity:0.325301;stroke-width:1.1;stroke-opacity:0"
+       style="fill:#00ffff;fill-opacity:0.32530099;stroke-width:1.10000002;stroke-opacity:0"
        id="rect12"
        width="72.62294"
        height="92.376381"
@@ -67,7 +72,7 @@
        y="44.154747" />
     <text
        xml:space="preserve"
-       style="font-size:20px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       style="font-size:20px;line-height:1.25;font-family:sans-serif;stroke-width:0.26458299"
        x="33.001423"
        y="70.642914"
        id="text16"><tspan
@@ -75,9 +80,9 @@
          id="tspan14"
          x="33.001423"
          y="70.642914"
-         style="font-size:20px;stroke-width:0.264583">names</tspan></text>
+         style="font-size:20px;stroke-width:0.26458299">names</tspan></text>
     <rect
-       style="fill:#00ffff;fill-opacity:0.325301;stroke-width:1.1;stroke-opacity:0"
+       style="fill:#00ffff;fill-opacity:0.32530099;stroke-width:1.10000002;stroke-opacity:0"
        id="rect18"
        width="59.260319"
        height="26.725243"
@@ -85,18 +90,18 @@
        y="45.897697" />
     <text
        xml:space="preserve"
-       style="font-size:79.9999px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       style="font-size:79.99990082px;line-height:1.25;font-family:sans-serif;stroke-width:0.26458299"
        x="134.20718"
        y="56.936382"
        id="text22"><tspan
          sodipodi:role="line"
          id="tspan20"
          x="134.20718"
-         y="56.936382"
-         style="stroke-width:0.264583" /></text>
+         y="127.71754"
+         style="stroke-width:0.26458299" /></text>
     <text
        xml:space="preserve"
-       style="font-size:20px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       style="font-size:20px;line-height:1.25;font-family:sans-serif;stroke-width:0.26458299"
        x="134.78816"
        y="65.070152"
        id="text26"><tspan
@@ -104,9 +109,9 @@
          id="tspan24"
          x="134.78816"
          y="65.070152"
-         style="stroke-width:0.264583">add</tspan></text>
+         style="stroke-width:0.26458299">add</tspan></text>
     <rect
-       style="fill:#00ffff;fill-opacity:0.325301;stroke-width:1.1;stroke-opacity:0"
+       style="fill:#00ffff;fill-opacity:0.32530099;stroke-width:1.10000002;stroke-opacity:0"
        id="rect28"
        width="59.260319"
        height="26.725243"
@@ -114,7 +119,7 @@
        y="87.728508" />
     <text
        xml:space="preserve"
-       style="font-size:20px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       style="font-size:20px;line-height:1.25;font-family:sans-serif;stroke-width:0.26458299"
        x="134.78816"
        y="106.90096"
        id="text32"><tspan
@@ -122,9 +127,9 @@
          id="tspan30"
          x="134.78816"
          y="106.90096"
-         style="stroke-width:0.264583">new</tspan></text>
+         style="stroke-width:0.26458299">new</tspan></text>
     <rect
-       style="fill:#00ffff;fill-opacity:0.325301;stroke-width:1.1;stroke-opacity:0"
+       style="fill:#00ffff;fill-opacity:0.32530099;stroke-width:1.10000002;stroke-opacity:0"
        id="rect34"
        width="71.060631"
        height="25.454556"
@@ -132,7 +137,7 @@
        y="175.53036" />
     <text
        xml:space="preserve"
-       style="font-size:20px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       style="font-size:20px;line-height:1.25;font-family:sans-serif;stroke-width:0.26458299"
        x="41.363647"
        y="193.56068"
        id="text38"><tspan
@@ -140,9 +145,9 @@
          id="tspan36"
          x="41.363647"
          y="193.56068"
-         style="stroke-width:0.264583">time</tspan></text>
+         style="stroke-width:0.26458299">time</tspan></text>
     <rect
-       style="fill:#00ffff;fill-opacity:0.325301;stroke-width:1.1;stroke-opacity:0"
+       style="fill:#00ffff;fill-opacity:0.32530099;stroke-width:1.10000002;stroke-opacity:0"
        id="rect40"
        width="71.060631"
        height="25.454556"
@@ -150,7 +155,7 @@
        y="175.53036" />
     <text
        xml:space="preserve"
-       style="font-size:20px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       style="font-size:20px;line-height:1.25;font-family:sans-serif;stroke-width:0.26458299"
        x="128.33337"
        y="193.56068"
        id="text44"><tspan
@@ -158,9 +163,9 @@
          id="tspan42"
          x="128.33337"
          y="193.56068"
-         style="stroke-width:0.264583">unlim.</tspan></text>
+         style="stroke-width:0.26458299">unlim.</tspan></text>
     <rect
-       style="fill:#00ffff;fill-opacity:0.325301;stroke-width:1.1;stroke-opacity:0"
+       style="fill:#00ffff;fill-opacity:0.32530099;stroke-width:1.10000002;stroke-opacity:0"
        id="rect46"
        width="102.87883"
        height="31.287891"
@@ -168,7 +173,7 @@
        y="225.37888" />
     <text
        xml:space="preserve"
-       style="font-size:20px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       style="font-size:20px;line-height:1.25;font-family:sans-serif;stroke-width:0.26458299"
        x="80.07579"
        y="247.12129"
        id="text50"><tspan
@@ -176,9 +181,9 @@
          id="tspan48"
          x="80.07579"
          y="247.12129"
-         style="stroke-width:0.264583">start !!!</tspan></text>
+         style="stroke-width:0.26458299">start !!!</tspan></text>
     <rect
-       style="fill:#00ffff;fill-opacity:0.325301;stroke-width:1.1;stroke-opacity:0"
+       style="fill:#00ffff;fill-opacity:0.32530099;stroke-width:1.10000002;stroke-opacity:0"
        id="rect52"
        width="152.19702"
        height="18.030312"
@@ -186,7 +191,7 @@
        y="22.80304" />
     <text
        xml:space="preserve"
-       style="font-size:20px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       style="font-size:20px;line-height:1.25;font-family:sans-serif;stroke-width:0.26458299"
        x="4.8783979"
        y="38.181835"
        id="text56"><tspan
@@ -194,9 +199,9 @@
          id="tspan54"
          x="4.8783979"
          y="38.181835"
-         style="stroke-width:0.264583">qwirkolator 0.1alpha</tspan></text>
+         style="stroke-width:0.26458299">qwirkolator 0.1alpha</tspan></text>
     <rect
-       style="fill:#000000;fill-opacity:0.325301;stroke-width:1.1;stroke-opacity:0"
+       style="fill:#000000;fill-opacity:0.32530099;stroke-width:1.10000002;stroke-opacity:0"
        id="rect58"
        width="195.79167"
        height="262.31549"
@@ -204,7 +209,7 @@
        y="18.898809" />
     <text
        xml:space="preserve"
-       style="font-size:20px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       style="font-size:20px;line-height:1.25;font-family:sans-serif;stroke-width:0.26458299"
        x="58.863659"
        y="-4.2424259"
        id="text64"><tspan
@@ -212,10 +217,10 @@
          id="tspan62"
          x="58.863659"
          y="-4.2424259"
-         style="stroke-width:0.264583">start screen</tspan></text>
+         style="stroke-width:0.26458299">start screen</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:20px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       style="font-size:20px;line-height:1.25;font-family:sans-serif;stroke-width:0.26458299"
        x="258.78799"
        y="-4.2424259"
        id="text68"><tspan
@@ -223,10 +228,10 @@
          id="tspan66"
          x="258.78799"
          y="-4.2424259"
-         style="stroke-width:0.264583">ingame</tspan></text>
+         style="stroke-width:0.26458299">ingame</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:10px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       style="font-size:10px;line-height:1.25;font-family:sans-serif;stroke-width:0.26458299"
        x="235.98492"
        y="39.772743"
        id="text72"><tspan
@@ -234,10 +239,10 @@
          id="tspan70"
          x="235.98492"
          y="39.772743"
-         style="stroke-width:0.264583">name 1</tspan></text>
+         style="stroke-width:0.26458299">name 1</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:10px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       style="font-size:10px;line-height:1.25;font-family:sans-serif;stroke-width:0.26458299"
        x="281.591"
        y="39.772743"
        id="text76"><tspan
@@ -245,10 +250,10 @@
          id="tspan74"
          x="281.591"
          y="39.772743"
-         style="stroke-width:0.264583">name 2</tspan></text>
+         style="stroke-width:0.26458299">name 2</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:10px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       style="font-size:10px;line-height:1.25;font-family:sans-serif;stroke-width:0.26458299"
        x="326.13647"
        y="39.772743"
        id="text80"><tspan
@@ -256,10 +261,10 @@
          id="tspan78"
          x="326.13647"
          y="39.772743"
-         style="stroke-width:0.264583">name 3</tspan></text>
+         style="stroke-width:0.26458299">name 3</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:10px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       style="font-size:10px;line-height:1.25;font-family:sans-serif;stroke-width:0.26458299"
        x="369.09103"
        y="39.772743"
        id="text84"><tspan
@@ -267,10 +272,10 @@
          id="tspan82"
          x="369.09103"
          y="39.772743"
-         style="stroke-width:0.264583">name 4</tspan></text>
+         style="stroke-width:0.26458299">name 4</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:10px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       style="font-size:10px;line-height:1.25;font-family:sans-serif;stroke-width:0.26458299"
        x="102.3974"
        y="132.60898"
        id="text88"><tspan
@@ -278,10 +283,10 @@
          id="tspan86"
          x="102.3974"
          y="132.60898"
-         style="stroke-width:0.264583">list of players added</tspan></text>
+         style="stroke-width:0.26458299">list of players added</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:10px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       style="font-size:10px;line-height:1.25;font-family:sans-serif;stroke-width:0.26458299"
        x="317.20032"
        y="276.81152"
        id="text92"><tspan
@@ -289,10 +294,10 @@
          id="tspan90"
          x="317.20032"
          y="276.81152"
-         style="stroke-width:0.264583">total time: 13.37 s</tspan></text>
+         style="stroke-width:0.26458299">total time: 13.37 s</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:10px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       style="font-size:10px;line-height:1.25;font-family:sans-serif;stroke-width:0.26458299"
        x="227.50008"
        y="55.151535"
        id="text96"><tspan
@@ -300,10 +305,10 @@
          id="tspan94"
          x="227.50008"
          y="55.151535"
-         style="stroke-width:0.264583">1</tspan></text>
+         style="stroke-width:0.26458299">1</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:10px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       style="font-size:10px;line-height:1.25;font-family:sans-serif;stroke-width:0.26458299"
        x="227.50008"
        y="68.485687"
        id="text100"><tspan
@@ -311,10 +316,10 @@
          id="tspan98"
          x="227.50008"
          y="68.485687"
-         style="stroke-width:0.264583">2</tspan></text>
+         style="stroke-width:0.26458299">2</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:10px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       style="font-size:10px;line-height:1.25;font-family:sans-serif;stroke-width:0.26458299"
        x="227.50008"
        y="81.199646"
        id="text104"><tspan
@@ -322,9 +327,9 @@
          id="tspan102"
          x="227.50008"
          y="81.199646"
-         style="stroke-width:0.264583">3</tspan></text>
+         style="stroke-width:0.26458299">3</tspan></text>
     <rect
-       style="fill:#00ffff;fill-opacity:0.325301;stroke-width:1.1;stroke-opacity:0"
+       style="fill:#00ffff;fill-opacity:0.32530099;stroke-width:1.10000002;stroke-opacity:0"
        id="rect106"
        width="102.87883"
        height="31.287891"
@@ -332,7 +337,7 @@
        y="133.45567" />
     <text
        xml:space="preserve"
-       style="font-size:10px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       style="font-size:10px;line-height:1.25;font-family:sans-serif;stroke-width:0.26458299"
        x="281.94742"
        y="150.21989"
        id="text110"><tspan
@@ -340,9 +345,9 @@
          id="tspan108"
          x="281.94742"
          y="150.21989"
-         style="stroke-width:0.264583">pause / resume</tspan></text>
+         style="stroke-width:0.26458299">pause / resume</tspan></text>
     <rect
-       style="fill:#00ffff;fill-opacity:0.325301;stroke-width:1.1;stroke-opacity:0"
+       style="fill:#00ffff;fill-opacity:0.32530099;stroke-width:1.10000002;stroke-opacity:0"
        id="rect112"
        width="102.87883"
        height="31.287891"
@@ -350,7 +355,7 @@
        y="175.62935" />
     <text
        xml:space="preserve"
-       style="font-size:10px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       style="font-size:10px;line-height:1.25;font-family:sans-serif;stroke-width:0.26458299"
        x="304.70193"
        y="192.39354"
        id="text116"><tspan
@@ -358,9 +363,9 @@
          id="tspan114"
          x="304.70193"
          y="192.39354"
-         style="stroke-width:0.264583">restart</tspan></text>
+         style="stroke-width:0.26458299">restart</tspan></text>
     <rect
-       style="fill:#00ffff;fill-opacity:0.325301;stroke-width:1.1;stroke-opacity:0"
+       style="fill:#00ffff;fill-opacity:0.32530099;stroke-width:1.10000002;stroke-opacity:0"
        id="rect118"
        width="102.87883"
        height="31.287891"
@@ -368,7 +373,7 @@
        y="217.32913" />
     <text
        xml:space="preserve"
-       style="font-size:10px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       style="font-size:10px;line-height:1.25;font-family:sans-serif;stroke-width:0.26458299"
        x="304.70193"
        y="234.09332"
        id="text122"><tspan
@@ -376,10 +381,10 @@
          id="tspan120"
          x="304.70193"
          y="234.09332"
-         style="stroke-width:0.264583">finish</tspan></text>
+         style="stroke-width:0.26458299">finish</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:10px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       style="font-size:10px;line-height:1.25;font-family:sans-serif;stroke-width:0.26458299"
        x="256.87946"
        y="55.151535"
        id="text126"><tspan
@@ -387,10 +392,10 @@
          id="tspan124"
          x="256.87946"
          y="55.151535"
-         style="stroke-width:0.264583">1</tspan></text>
+         style="stroke-width:0.26458299">1</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:10px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       style="font-size:10px;line-height:1.25;font-family:sans-serif;stroke-width:0.26458299"
        x="300.00082"
        y="55.151535"
        id="text130"><tspan
@@ -398,10 +403,10 @@
          id="tspan128"
          x="300.00082"
          y="55.151535"
-         style="stroke-width:0.264583">1</tspan></text>
+         style="stroke-width:0.26458299">1</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:10px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       style="font-size:10px;line-height:1.25;font-family:sans-serif;stroke-width:0.26458299"
        x="343.59604"
        y="55.151535"
        id="text134"><tspan
@@ -409,10 +414,10 @@
          id="tspan132"
          x="343.59604"
          y="55.151535"
-         style="stroke-width:0.264583">1</tspan></text>
+         style="stroke-width:0.26458299">1</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:10px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       style="font-size:10px;line-height:1.25;font-family:sans-serif;stroke-width:0.26458299"
        x="381.97879"
        y="55.151535"
        id="text138"><tspan
@@ -420,10 +425,10 @@
          id="tspan136"
          x="381.97879"
          y="55.151535"
-         style="stroke-width:0.264583">1</tspan></text>
+         style="stroke-width:0.26458299">1</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:10px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       style="font-size:10px;line-height:1.25;font-family:sans-serif;stroke-width:0.26458299"
        x="255.93175"
        y="68.485687"
        id="text142"><tspan
@@ -431,10 +436,10 @@
          id="tspan140"
          x="255.93175"
          y="68.485687"
-         style="stroke-width:0.264583">2</tspan></text>
+         style="stroke-width:0.26458299">2</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:10px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       style="font-size:10px;line-height:1.25;font-family:sans-serif;stroke-width:0.26458299"
        x="300.00082"
        y="68.485687"
        id="text146"><tspan
@@ -442,10 +447,10 @@
          id="tspan144"
          x="300.00082"
          y="68.485687"
-         style="stroke-width:0.264583">2</tspan></text>
+         style="stroke-width:0.26458299">2</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:10px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       style="font-size:10px;line-height:1.25;font-family:sans-serif;stroke-width:0.26458299"
        x="343.59604"
        y="68.485687"
        id="text150"><tspan
@@ -453,10 +458,10 @@
          id="tspan148"
          x="343.59604"
          y="68.485687"
-         style="stroke-width:0.264583">2</tspan></text>
+         style="stroke-width:0.26458299">2</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:10px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       style="font-size:10px;line-height:1.25;font-family:sans-serif;stroke-width:0.26458299"
        x="382.92651"
        y="68.485687"
        id="text154"><tspan
@@ -464,10 +469,10 @@
          id="tspan152"
          x="382.92651"
          y="68.485687"
-         style="stroke-width:0.264583">2</tspan></text>
+         style="stroke-width:0.26458299">2</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:10px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       style="font-size:10px;line-height:1.25;font-family:sans-serif;stroke-width:0.26458299"
        x="256.87946"
        y="81.199646"
        id="text158"><tspan
@@ -475,10 +480,10 @@
          id="tspan156"
          x="256.87946"
          y="81.199646"
-         style="stroke-width:0.264583">3</tspan></text>
+         style="stroke-width:0.26458299">3</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:10px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       style="font-size:10px;line-height:1.25;font-family:sans-serif;stroke-width:0.26458299"
        x="301.42239"
        y="81.199646"
        id="text162"><tspan
@@ -486,10 +491,10 @@
          id="tspan160"
          x="301.42239"
          y="81.199646"
-         style="stroke-width:0.264583">3</tspan></text>
+         style="stroke-width:0.26458299">3</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:10px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       style="font-size:10px;line-height:1.25;font-family:sans-serif;stroke-width:0.26458299"
        x="343.12219"
        y="81.199646"
        id="text166"><tspan
@@ -497,10 +502,10 @@
          id="tspan164"
          x="343.12219"
          y="81.199646"
-         style="stroke-width:0.264583">3</tspan></text>
+         style="stroke-width:0.26458299">3</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:10px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       style="font-size:10px;line-height:1.25;font-family:sans-serif;stroke-width:0.26458299"
        x="225.08406"
        y="96.667679"
        id="text170"><tspan
@@ -508,10 +513,10 @@
          id="tspan168"
          x="225.08406"
          y="96.667679"
-         style="stroke-width:0.264583">tot</tspan></text>
+         style="stroke-width:0.26458299">tot</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:10px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       style="font-size:10px;line-height:1.25;font-family:sans-serif;stroke-width:0.26458299"
        x="256.21683"
        y="96.667679"
        id="text174"><tspan
@@ -519,10 +524,10 @@
          id="tspan172"
          x="256.21683"
          y="96.667679"
-         style="stroke-width:0.264583">6</tspan></text>
+         style="stroke-width:0.26458299">6</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:10px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       style="font-size:10px;line-height:1.25;font-family:sans-serif;stroke-width:0.26458299"
        x="300.75977"
        y="96.667679"
        id="text178"><tspan
@@ -530,10 +535,10 @@
          id="tspan176"
          x="300.75977"
          y="96.667679"
-         style="stroke-width:0.264583">6</tspan></text>
+         style="stroke-width:0.26458299">6</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:10px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       style="font-size:10px;line-height:1.25;font-family:sans-serif;stroke-width:0.26458299"
        x="343.40726"
        y="96.667679"
        id="text182"><tspan
@@ -541,10 +546,10 @@
          id="tspan180"
          x="343.40726"
          y="96.667679"
-         style="stroke-width:0.264583">6</tspan></text>
+         style="stroke-width:0.26458299">6</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:10px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       style="font-size:10px;line-height:1.25;font-family:sans-serif;stroke-width:0.26458299"
        x="382.73773"
        y="96.667679"
        id="text186"><tspan
@@ -552,10 +557,10 @@
          id="tspan184"
          x="382.73773"
          y="96.667679"
-         style="stroke-width:0.264583">3</tspan></text>
+         style="stroke-width:0.26458299">3</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:10px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       style="font-size:10px;line-height:1.25;font-family:sans-serif;stroke-width:0.26458299"
        x="260.62363"
        y="121.78232"
        id="text190"><tspan
@@ -563,10 +568,11 @@
          id="tspan188"
          x="260.62363"
          y="121.78232"
-         style="stroke-width:0.264583">name 4</tspan></text>
+         style="stroke-width:0.26458299">name 4</tspan></text>
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="fill:none;stroke:#000000;stroke-width:0.26458299px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="M 223.18861,83.873426 H 398.51724"
-       id="path192" />
+       id="path192"
+       inkscape:connector-curvature="0" />
   </g>
 </svg>
