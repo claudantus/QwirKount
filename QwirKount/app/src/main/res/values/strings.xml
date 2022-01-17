@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">QwirKount</string>
+
+    <string name="player_title">players</string>
+    <string name="player_add">add player</string>
+    <string name="player_new">new player</string>
+
+    <string name="player_selected">selected players</string>
+
+
+    <string name="time_title">time limit (s)</string>
+    <string name="time_info">0 = unlimited</string>
+
 </resources>
