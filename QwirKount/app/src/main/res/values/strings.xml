@@ -4,11 +4,30 @@
     <string name="player_title">players</string>
     <string name="player_add">add player</string>
     <string name="player_new">new player</string>
+    <string name="player_delete">delete player</string>
+    <string name="start_game">let\'s go!</string>
+
+
 
     <string name="player_selected">selected players</string>
 
 
     <string name="time_title">time limit (s)</string>
     <string name="time_info">0 = unlimited</string>
+
+    <string name="pause_button">pause</string>
+    <string name="resume_button">resume</string>
+    <string name="reset_button">reset</string>
+    <string name="stop_button">stop</string>
+
+    <string name="round"># round</string>
+    <string name="player1">player1</string>
+    <string name="player2">player2</string>
+    <string name="player3">player3</string>
+    <string name="player4">player4</string>
+
+
+
+
 
 </resources>

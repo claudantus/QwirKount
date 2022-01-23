@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
 
     <TextView
         android:layout_width="wrap_content"
@@ -33,21 +35,16 @@
             android:text="@string/player_title"
             />
 
-        <ScrollView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="@id/titleTextView"
-            app:layout_constraintRight_toLeftOf="@id/titleTextView"
-            android:id="@+id/playerScrollView"
-            android:minHeight="100dp">
+
         <ListView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/playerListView"
-            android:minHeight="100dp"
+            android:listSelector="@drawable/playerlistview_selector"
             />
 
-        </ScrollView>
+
+
     </LinearLayout>
 
     <LinearLayout
@@ -58,34 +55,31 @@
         android:orientation="vertical"
         android:id="@+id/playerButtonsLayout"
         >
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
-        android:text="@string/player_add"
-        android:id="@+id/playerAddButton"
-        />
+
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
         android:text="@string/player_new"
         android:id="@+id/playerNewButton"
+        android:textSize="10dp"
         />
+
 
     </LinearLayout>
 
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="@id/playerLayout"
         app:layout_constraintTop_toBottomOf="@id/playerLayout"
         android:id="@+id/playersSelectedLayout"
         android:orientation="vertical"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
         >
         <TextView
             android:layout_width="wrap_content"
@@ -94,29 +88,25 @@
             android:text="@string/player_selected"
             />
 
-        <ScrollView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            >
+
         <ListView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/playersSelectedListView"
             android:layout_marginTop="10dp"
             />
-        </ScrollView>
 
 
 
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/playersSelectedLayout"
+        app:layout_constraintTop_toBottomOf="@id/playerButtonsLayout"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="200dp"
         android:id="@+id/timeLayout"
         >
 
@@ -144,6 +134,27 @@
             android:inputType="number"
             android:text="0"
              />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:gravity="center_horizontal"
+        android:id="@+id/stopButtonLayout"
+        android:paddingBottom="100dp"
+        >
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="@string/start_game"
+            android:id="@+id/startGameButton"
+            android:textSize="10dp"
+            />
 
 
     </LinearLayout>

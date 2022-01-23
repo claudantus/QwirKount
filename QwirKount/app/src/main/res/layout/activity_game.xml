@@ -1,9 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
+<!--some useful discussions influencing this layout-->
+<!--        http://android-delight.blogspot.com/2015/12/tablelayout-like-listview-multi-column.html?m=1-->
+<!--    https://stackoverflow.com/questions/26914491/how-to-make-table-list-inside-the-listview-->
+
+
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".GameActivity">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="50dp"
+        android:id="@+id/titleGameTextView"/>
+
+    <LinearLayout
+        android:id = "@+id/gameCountTitles"
+        android:layout_width = "fill_parent"
+        android:layout_height = "wrap_content"
+        android:background = "@color/colorCell"
+        app:layout_constraintTop_toBottomOf="@id/titleGameTextView"
+        android:layout_marginTop="20dp"
+        app:layout_constraintLeft_toLeftOf="parent">
+
+        <TextView
+            android:layout_width = "0dp"
+            android:layout_height = "wrap_content"
+            android:layout_weight = "1"
+            android:gravity = "center"
+            android:padding = "5dp"
+            android:text = "@string/round"
+            android:textColor = "#ffffff" />
+
+        <TextView
+            android:layout_width = "0dp"
+            android:layout_height = "wrap_content"
+            android:layout_weight = "2"
+            android:gravity = "center"
+            android:padding = "5dp"
+            android:text = "@string/player1"
+            android:textColor = "#ffffff"/>
+
+        <TextView
+            android:layout_width = "0dp"
+            android:layout_height = "wrap_content"
+            android:layout_weight = "1.5"
+            android:gravity = "center"
+            android:padding = "5dp"
+            android:text = "@string/player2"
+            android:textColor = "#ffffff" />
+
+        <TextView
+            android:layout_width = "0dp"
+            android:layout_height = "wrap_content"
+            android:layout_weight = "1.5"
+            android:gravity = "center"
+            android:padding = "5dp"
+            android:text = "@string/player3"
+            android:textColor = "#ffffff" />
+
+        <TextView
+            android:layout_width = "0dp"
+            android:layout_height = "wrap_content"
+            android:layout_weight = "1"
+            android:gravity = "center"
+            android:padding = "5dp"
+            android:text = "@string/player4"
+            android:textColor = "#ffffff" />
+    </LinearLayout>
+
+    <ListView
+        android:id = "@+id/gameCountListView"
+        android:layout_width = "match_parent"
+        android:layout_height = "wrap_content"
+        android:divider = "@null"
+        app:layout_constraintTop_toBottomOf="@id/gameCountTitles"
+        />
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:gravity="center_horizontal"
+        android:id="@+id/stopButtonLayout">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/stop_button"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/stopButtonLayout"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:gravity="center_horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pause_button"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/reset_button"
+            android:layout_marginLeft="50dp"
+            />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
