@@ -4,7 +4,7 @@
     <string name="show_totals">show total</string>
 
 
-    <string name="player_title">players</string>
+    <string name="player_title">\ \ players</string>
     <string name="player_add">add player</string>
     <string name="player_new">new player</string>
     <string name="player_delete">delete player</string>
@@ -22,6 +22,8 @@
     <string name="resume_button">resume</string>
     <string name="reset_button">reset</string>
     <string name="stop_button">stop</string>
+    <string name="gameStart_button">start</string>
+
 
     <string name="round"># round</string>
     <string name="player1">player1</string>

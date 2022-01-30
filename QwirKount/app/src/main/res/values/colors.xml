@@ -11,9 +11,13 @@
 
     <!-- Colors for in-game scores list -->
     <color name="colorTitle">#9900BCD4</color>
+    <color name="colorBGBase">#1AC5F8FF</color>
+
     <color name="colorBG">#1A00BCD4</color>
     <color name="colorBG1">#4D673AB7</color>
     <color name="colorBG2">#4D03DAC5</color>
+    <color name="colorBGStroke">#CC01302B</color>
+
 
 
 </resources>
