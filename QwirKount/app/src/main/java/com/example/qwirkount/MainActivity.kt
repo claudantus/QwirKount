@@ -1,64 +1,72 @@
 package com.example.qwirkount
 
 import android.app.AlertDialog
-import android.content.Context
 import android.content.DialogInterface
-import android.content.Intent
-import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.InputType
 import android.widget.ArrayAdapter
 import android.widget.Toast
-import android.view.View
 import android.widget.EditText
 import kotlinx.android.synthetic.main.activity_main.*
+import java.io.Serializable
 
 
 class MainActivity : AppCompatActivity() {
-    private val mPlayerList = mutableListOf<String?>()
-    private val mPlayerSelectedList = mutableListOf<String?>()
+    // list of available players
+    private val mPlayerList = mutableListOf<String>()
 
+    // list of selected players
+    private val mPlayerSelectedList = mutableListOf<String>()
 
-    private var mText = ""
-    private val maxPlayerList = 4
-    private val maxPlayerGame = 4
+    // test which is changed from dialog
+    private var mText: String = ""
+
+    // max number of players in mPlayerList
+    private val mMaxPlayerList: Int = 4
+    // max number of players in the selection (maybe rename?)
+    private val mMaxPlayerGame: Int = 4
+    // min number of players in selection in order to start a game
+    private val mMinPlayers: Int = 2
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        mPlayerList.add("Blarius")
-        mPlayerList.add("Idiota")
-        mPlayerList.add("Bert")
+//        mPlayerList.add("Blarius")
+//        mPlayerList.add("Idiota")
+//        mPlayerList.add("Bert")
+//
+        mPlayerSelectedList.add("p1")
+        mPlayerSelectedList.add("p2")
+        mPlayerSelectedList.add("p3")
+        mPlayerSelectedList.add("p4")
 
-
-
-
+        // adapter for the player list
         val mPlayerListAdapter = ArrayAdapter(this,
             R.layout.listview_item, mPlayerList)
 
         playerListView.adapter = mPlayerListAdapter
 
-
+        //adapter for the selected player list
         val mPlayerSelectedAdapter = ArrayAdapter(this,
             R.layout.listview_item, mPlayerSelectedList)
 
         playersSelectedListView.adapter = mPlayerSelectedAdapter
 
-
-        playerListView.setOnItemClickListener { _, view, position, _ ->
+        // dialog when clicking on players list item
+        playerListView.setOnItemClickListener { _, _, position, _ ->
             clickPlayerDialog(mPlayerListAdapter, mPlayerSelectedAdapter, position)
-
-
         }
 
-        playersSelectedListView.setOnItemClickListener { _, view, position, _ ->
-            clickSelectedPlayerDialog(mPlayerListAdapter, mPlayerSelectedAdapter, position)
+        // dialog when clicking on selected player item
+        playersSelectedListView.setOnItemClickListener { _, _, position, _ ->
+            clickSelectedPlayerDialog(mPlayerSelectedAdapter, position)
         }
 
+        // dialog when adding a new player
         playerNewButton.setOnClickListener{
-            if (mPlayerList.size>=maxPlayerList){
+            if (mPlayerList.size>=mMaxPlayerList){
                 Toast.makeText(this, "Player list full", Toast.LENGTH_SHORT).show()
             }
             else{
@@ -66,9 +74,26 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        // contract for the game activity
+        val gameContract = registerForActivityResult(GameActivity.Contract()){result->
+            val winner = result.winner!!
+            Toast.makeText(this, "The winner is:", Toast.LENGTH_SHORT)
+        }
 
+        // start the game on button click
+        startGameButton.setOnClickListener {
+            val numPlayers = mPlayerSelectedList.size
+            val showTotal = showTotalCheckBox.isChecked
+            if (numPlayers >= mMinPlayers){
 
-
+                val playerList: ArrayList<String> = ArrayList(mPlayerSelectedList)
+                var game = GameSetup(showTotal, numPlayers, playerList, 0, "")
+                gameContract.launch(game)
+            }
+            else {
+                Toast.makeText(this, "Not enough players. Need at least 2.", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 
     private fun newPlayerDialog(adapter: ArrayAdapter<String?>){
@@ -86,7 +111,8 @@ class MainActivity : AppCompatActivity() {
             // Here you get get input text from the Edittext
             mText = input.text.toString()
 
-            if (mText.filter{!it.isWhitespace()}.isEmpty()){
+            // check the input for validity: Not empty! (or only whitespace)
+            if (mText.none { !it.isWhitespace() }){
                 Toast.makeText(this, "Invalid Name!", Toast.LENGTH_SHORT).show()
             }
             else{
@@ -95,8 +121,6 @@ class MainActivity : AppCompatActivity() {
 
                 adapter.notifyDataSetChanged()
             }
-
-
         })
         builder.setNegativeButton("Cancel", DialogInterface.OnClickListener { dialog, which -> dialog.cancel() })
 
@@ -105,18 +129,19 @@ class MainActivity : AppCompatActivity() {
 
     private fun clickPlayerDialog(adapterList: ArrayAdapter<String?>, adapterSelected: ArrayAdapter<String?>, position: Int){
         val builder: AlertDialog.Builder = AlertDialog.Builder(this)
-        builder.setTitle("Player: " + mPlayerList[position])
-        // Set up the input
 
+        builder.setTitle("Player: " + mPlayerList[position])
+
+        // delete player from list
         builder.setPositiveButton("Delete", DialogInterface.OnClickListener { _, _ ->
             mPlayerList.removeAt(position)
             adapterList.notifyDataSetChanged()
         })
 
-        // Set up the buttons
+        // add player to selection
         builder.setNeutralButton("Add", DialogInterface.OnClickListener { _, _ ->
             // Here you get get input text from the Edittext
-            if (mPlayerSelectedList.size < maxPlayerGame){
+            if (mPlayerSelectedList.size < mMaxPlayerGame){
                 mText = mPlayerList[position]!!
                 mPlayerSelectedList.add(mText)
                 adapterSelected.notifyDataSetChanged()
@@ -124,54 +149,33 @@ class MainActivity : AppCompatActivity() {
             else{
                 Toast.makeText(this, "Game is full", Toast.LENGTH_SHORT).show()
             }
-
         })
-        builder.setNegativeButton("Cancel", DialogInterface.OnClickListener { dialog, which -> dialog.cancel() })
+
+        // do nothing
+        builder.setNegativeButton("Cancel", DialogInterface.OnClickListener { dialog, _ -> dialog.cancel() })
 
         builder.show()
     }
 
-    private fun clickSelectedPlayerDialog(adapterList: ArrayAdapter<String?>, adapterSelected: ArrayAdapter<String?>, position: Int){
+    private fun clickSelectedPlayerDialog(adapterSelected: ArrayAdapter<String?>, position: Int){
         val builder: AlertDialog.Builder = AlertDialog.Builder(this)
-        builder.setTitle("Player: " + mPlayerList[position])
-        // Set up the input
 
+        builder.setTitle("Player: " + mPlayerSelectedList[position])
+
+        // remove player from selection
         builder.setNeutralButton("Remove", DialogInterface.OnClickListener { _, _ ->
             mPlayerSelectedList.removeAt(position)
             adapterSelected.notifyDataSetChanged()
         })
 
+        // do nothing
         builder.setNegativeButton("Cancel", DialogInterface.OnClickListener { dialog, which -> dialog.cancel() })
 
         builder.show()
     }
 
 }
-//
 
-//    // Custom contract defined in ListOperations class
-//    val operationsContract = registerForActivityResult(ListOperations.Contract()){result->
-//        if (result.time!!.toInt() > -1) {
-//            if(result.index == -1){
-//                mOperationslist.add(result.operation + " : " + result.time + " s")
-//                mOperationsadapter.notifyDataSetChanged()
-//                Toast.makeText(this, "Is good!", Toast.LENGTH_SHORT).show()
-//            }
-//            else{
-//                mOperationslist[result.index!!] =  result.operation + " : " + result.time + " s"
-//                mOperationsadapter.notifyDataSetChanged()
-//                Toast.makeText(this, "Change is good!", Toast.LENGTH_SHORT).show()
-//            }
-//        }
-//        else if (result.time!!.toInt() == -1){
-//            Toast.makeText(this, "Input not valid!", Toast.LENGTH_SHORT).show()
-//        }
-//        else if (result.time!!.toInt() == -2){
-//            mOperationslist.removeAt(result.index!!)
-//            mOperationsadapter.notifyDataSetChanged()
-//            Toast.makeText(this, "Deleted!", Toast.LENGTH_SHORT).show()
-//        }
-//        else if (result.time!!.toInt() == -3){
-//            Toast.makeText(this, "Canceled!", Toast.LENGTH_SHORT).show()
-//        }
-//    }
+// game setup class (input to the game activity contract. as a result, the winner will be added
+class GameSetup(val showTotal: Boolean?, val numPlayers: Int?, val players: ArrayList<String>, val time: Int?, val winner: String?):Serializable
+

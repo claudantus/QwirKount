@@ -8,4 +8,12 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="colorCell">#FF03DAC5</color>
+
+    <!-- Colors for in-game scores list -->
+    <color name="colorTitle">#9900BCD4</color>
+    <color name="colorBG">#1A00BCD4</color>
+    <color name="colorBG1">#4D673AB7</color>
+    <color name="colorBG2">#4D03DAC5</color>
+
+
 </resources>

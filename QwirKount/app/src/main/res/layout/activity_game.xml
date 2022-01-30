@@ -30,7 +30,7 @@
         android:id = "@+id/gameCountTitles"
         android:layout_width = "fill_parent"
         android:layout_height = "wrap_content"
-        android:background = "@color/colorCell"
+        android:background = "@color/colorTitle"
         app:layout_constraintTop_toBottomOf="@id/titleGameTextView"
         android:layout_marginTop="20dp"
         app:layout_constraintLeft_toLeftOf="parent">
@@ -42,7 +42,8 @@
             android:gravity = "center"
             android:padding = "5dp"
             android:text = "@string/round"
-            android:textColor = "#ffffff" />
+            android:textColor = "#ffffff"
+            android:id="@+id/gameRoundTextView"/>
 
         <TextView
             android:layout_width = "0dp"
@@ -51,16 +52,18 @@
             android:gravity = "center"
             android:padding = "5dp"
             android:text = "@string/player1"
-            android:textColor = "#ffffff"/>
+            android:textColor = "#ffffff"
+            android:id="@+id/gamePlayer1TextView"/>
 
         <TextView
-            android:layout_width = "0dp"
-            android:layout_height = "wrap_content"
-            android:layout_weight = "1.5"
-            android:gravity = "center"
-            android:padding = "5dp"
-            android:text = "@string/player2"
-            android:textColor = "#ffffff" />
+            android:id="@+id/gamePlayer2TextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="@string/player2"
+            android:textColor="#ffffff" />
 
         <TextView
             android:layout_width = "0dp"
@@ -69,7 +72,8 @@
             android:gravity = "center"
             android:padding = "5dp"
             android:text = "@string/player3"
-            android:textColor = "#ffffff" />
+            android:textColor = "#ffffff"
+            android:id="@+id/gamePlayer3TextView"/>
 
         <TextView
             android:layout_width = "0dp"
@@ -78,16 +82,27 @@
             android:gravity = "center"
             android:padding = "5dp"
             android:text = "@string/player4"
-            android:textColor = "#ffffff" />
+            android:textColor = "#ffffff"
+            android:id="@+id/gamePlayer4TextView"/>
     </LinearLayout>
 
-    <ListView
-        android:id = "@+id/gameCountListView"
-        android:layout_width = "match_parent"
-        android:layout_height = "wrap_content"
-        android:divider = "@null"
+    <LinearLayout
+        android:id = "@+id/gameCountListViewLayout"
+        android:layout_width = "fill_parent"
+        android:layout_height = "200dp"
+        android:background = "@color/colorBG"
         app:layout_constraintTop_toBottomOf="@id/gameCountTitles"
-        />
+        app:layout_constraintLeft_toLeftOf="parent">
+
+        <ListView
+            android:id = "@+id/gameCountListView"
+            android:layout_width = "match_parent"
+            android:layout_height = "wrap_content"
+            android:divider = "@null"
+            android:layout_marginTop="20dp"
+            />
+
+    </LinearLayout>
 
 
 
@@ -103,6 +118,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/stop_button"
+            android:id="@+id/stopGameButton"
             />
     </LinearLayout>
 
@@ -117,6 +133,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/pause_button"
+            android:id="@+id/pauseGameButton"
             />
 
         <Button
@@ -124,6 +141,7 @@
             android:layout_height="wrap_content"
             android:text="@string/reset_button"
             android:layout_marginLeft="50dp"
+            android:id="@+id/resetGameButton"
             />
     </LinearLayout>
 
