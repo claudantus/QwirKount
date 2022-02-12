@@ -15,15 +15,12 @@ import java.io.Serializable
 class MainActivity : AppCompatActivity() {
     // list of available players
     private val mPlayerList = mutableListOf<String>()
-
     // list of selected players
     private val mPlayerSelectedList = mutableListOf<String>()
-
     // test which is changed from dialog
     private var mText: String = ""
-
     // max number of players in mPlayerList
-    private val mMaxPlayerList: Int = 4
+    private val mMaxPlayerList: Int = 8
     // max number of players in the selection (maybe rename?)
     private val mMaxPlayerGame: Int = 4
     // min number of players in selection in order to start a game
@@ -117,7 +114,7 @@ class MainActivity : AppCompatActivity() {
             }
             else{
                 mPlayerList.add(mText)
-                Toast.makeText(this, mPlayerList.joinToString(), Toast.LENGTH_LONG).show()
+                //Toast.makeText(this, mPlayerList.joinToString(), Toast.LENGTH_LONG).show()
 
                 adapter.notifyDataSetChanged()
             }
@@ -173,7 +170,6 @@ class MainActivity : AppCompatActivity() {
 
         builder.show()
     }
-
 }
 
 // game setup class (input to the game activity contract. as a result, the winner will be added

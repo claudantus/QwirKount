@@ -2,18 +2,24 @@ package com.example.qwirkount
 
 import android.app.Activity
 import android.app.AlertDialog
+import android.app.Dialog
 import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.InputType
+import android.util.Log
 import android.view.LayoutInflater
+import android.view.Window
 import android.widget.ArrayAdapter
 import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContract
+import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_game.*
+import kotlinx.android.synthetic.main.correctscore_dialog.view.*
 
 class GameActivity : AppCompatActivity() {
     // players from the selection in main activity
@@ -23,9 +29,9 @@ class GameActivity : AppCompatActivity() {
     private lateinit var mScoresAdapter: ListViewAdapter
     private lateinit var mTotalsAdapter: ListViewAdapter
 
-    private val mScoresList: ArrayList<ScoreModel> = ArrayList<ScoreModel>()
-    private val mTotalsList: ArrayList<ScoreModel> = ArrayList<ScoreModel>()
-    private val mTotals: ArrayList<Int> = arrayListOf(0,0,0,0)
+    private val mScoresList: MutableList<ScoreModel> = mutableListOf()
+    private val mTotalsList: MutableList<ScoreModel> = mutableListOf()
+    private var mTotals: ArrayList<Int> = arrayListOf(0,0,0,0)
 
 
     // number of players in the game (2-4)
@@ -51,15 +57,23 @@ class GameActivity : AppCompatActivity() {
 
 
     override fun onBackPressed() {
-        val resultIntent = Intent()
-        resultIntent.putExtra("time", mTime)
-        resultIntent.putExtra("players", ArrayList(mPlayers))
-        resultIntent.putExtra("numPlayers", mNumPlayers)
-        resultIntent.putExtra("winner", mWinner)
-        setResult(Activity.RESULT_CANCELED, resultIntent)
-        finish()
-    }
+        val builder: AlertDialog.Builder = AlertDialog.Builder(this)
+        builder.setTitle("Stop the game?")
 
+        // Set up the buttons
+        builder.setPositiveButton("OK", DialogInterface.OnClickListener { _, _ ->
+            // Here you get get input text from the Edittext
+            val resultIntent = Intent()
+            resultIntent.putExtra("time", mTime)
+            resultIntent.putExtra("players", ArrayList(mPlayers))
+            resultIntent.putExtra("numPlayers", mNumPlayers)
+            resultIntent.putExtra("winner", mWinner)
+            setResult(Activity.RESULT_CANCELED, resultIntent)
+            finish()
+        })
+        builder.setNegativeButton("Cancel", DialogInterface.OnClickListener { dialog, which -> dialog.cancel() })
+        builder.show()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -92,7 +106,14 @@ class GameActivity : AppCompatActivity() {
         // dialog to choose the first player
         chooseFirstPlayer()
 
+        gameCountListView.setOnItemClickListener{ _, _, position, _ ->
+            // dialog to correct score from chosen line
+            correctScoreDialog(position)
+        }
 
+        resetGameButton.setOnClickListener {
+            refreshGameDialog()
+        }
     }
 
     private fun chooseFirstPlayer(){
@@ -116,11 +137,89 @@ class GameActivity : AppCompatActivity() {
             gamePlayer3TextView.text = mPlayersSorted[2]
             gamePlayer4TextView.text = mPlayersSorted[3]
         })
-
-
         builder.show()
     }
 
+    private fun refreshGameDialog(){
+        val builder: AlertDialog.Builder = AlertDialog.Builder(this)
+        builder.setTitle("Refresh the game?")
+
+        // Set up the buttons
+        builder.setPositiveButton("OK", DialogInterface.OnClickListener { _, _ ->
+            // Refresh the game
+            mRound = 0
+            mScoresList.clear()
+            mTotals = arrayListOf(0,0,0,0)
+            mTotalsList[0] = ScoreModel(mRound, mTotals[0], mTotals[1], mTotals[2], mTotals[3])
+
+            mScoresAdapter.notifyDataSetChanged()
+            mTotalsAdapter.notifyDataSetChanged()
+        })
+        builder.setNegativeButton("Cancel", DialogInterface.OnClickListener { dialog, _ -> dialog.cancel() })
+        builder.show()
+    }
+
+    private fun correctScoreDialog(lineIndex: Int){
+        //Inflate the dialog with custom view
+        val mDialogView = LayoutInflater.from(this).inflate(R.layout.correctscore_dialog, null)
+        //AlertDialogBuilder
+        val mBuilder = AlertDialog.Builder(this)
+            .setView(mDialogView)
+            .setTitle("Score Correction Form")
+        //show dialog
+        val mAlertDialog = mBuilder.show()
+        val mList = ArrayList(mPlayersSorted)
+
+        val mDialogAdapter = ArrayAdapter(this,
+            R.layout.listview_item, mList)
+        mDialogView.dialogPlayerListView.adapter = mDialogAdapter
+
+        var mClickedList = List<Boolean>(mList.size) { false  }.toMutableList()
+        var mPlayerChosenIndex = -1
+
+        mDialogView.dialogPlayerListView.setOnItemClickListener{ _, _, position, _ ->
+            val state = !mClickedList[position]
+            mClickedList = List<Boolean>(mList.size) { false  }.toMutableList()
+            mClickedList[position] = state
+
+            (0 until mList.size).forEach { i ->
+                mDialogView.dialogPlayerListView.getChildAt(i).setBackgroundColor(Color.TRANSPARENT)
+            }
+
+            if (state){
+                mPlayerChosenIndex = position
+                mDialogView.dialogPlayerListView.getChildAt(position).setBackgroundColor(resources.getColor(R.color.colorBG))
+            }
+        }
+
+        mDialogView.dialogCancelButton.setOnClickListener {
+            //dismiss dialog
+            mAlertDialog.dismiss()
+        }
+        mDialogView.dialogOkButton.setOnClickListener {
+            //dismiss dialog
+            var chosenScore : ScoreModel = mScoresList[lineIndex]
+            var newScore = mDialogView.dialogNewScoreEditText.text.toString()
+
+            if (newScore.isEmpty()){
+                mAlertDialog.dismiss()
+            }
+
+            val oldScore = chosenScore
+            chosenScore.setScore(mPlayerChosenIndex, newScore.toInt())
+            mScoresList[lineIndex] = chosenScore
+            mScoresAdapter.notifyDataSetChanged()
+
+            if (mShowTotals){
+                mTotalsList[0] = ScoreModel(mRound,mTotals[0] - oldScore.getScore1() + chosenScore.getScore1(),
+                    mTotals[1] - oldScore.getScore2() + chosenScore.getScore2(),
+                    mTotals[2] - oldScore.getScore3() + chosenScore.getScore3(),
+                    mTotals[3]- oldScore.getScore4() + chosenScore.getScore4())
+                mTotalsAdapter.notifyDataSetChanged()
+            }
+            mAlertDialog.dismiss()
+        }
+    }
 
 
     private fun gameDialog(){
@@ -135,50 +234,44 @@ class GameActivity : AppCompatActivity() {
         input.inputType = InputType.TYPE_CLASS_NUMBER
         builder.setView(input)
 
-
         // Set up the buttons
         builder.setPositiveButton("OK", DialogInterface.OnClickListener { dialog, _ ->
-            var currentScore = input.text.toString()
-            if (currentScore.isEmpty()){
+            val currentScore: String = input.text.toString()
+
+            if (currentScore.trim().isEmpty()) {
+                Toast.makeText(this, "Invalid Score: Must not be empty!", Toast.LENGTH_SHORT).show()
                 dialog.cancel()
-            }
+            } else {
+                // Here you get get input text from the Edittext
+                mCurrentScore.setScore(mCurrentPlayerIndex, currentScore.toInt())
+                mTotals[mCurrentPlayerIndex] += currentScore.toInt()
 
-            // Here you get get input text from the Edittext
-            mCurrentScore.setScore(mCurrentPlayerIndex, currentScore.toInt())
-            mTotals[mCurrentPlayerIndex] += currentScore.toInt()
+                if (mCurrentPlayerIndex == mNumPlayers - 1) {
+                    mScoresList.add(mCurrentScore)
+                    mScoresAdapter.notifyDataSetChanged()
 
+                    if (mShowTotals) {
+                        mTotalsList[0] =
+                            ScoreModel(mRound, mTotals[0], mTotals[1], mTotals[2], mTotals[3])
+                        mTotalsAdapter.notifyDataSetChanged()
+                    }
 
-            if (mCurrentPlayerIndex == mNumPlayers-1){
-                mScoresList.add(mCurrentScore)
-                mScoresAdapter.notifyDataSetChanged()
+                    mCurrentPlayerIndex = 0
+                    mRound += 1
 
-                if (mShowTotals){
-                    mTotalsList[0] = ScoreModel(mRound,mTotals[0],mTotals[1],mTotals[2],mTotals[3])
-                    mTotalsAdapter.notifyDataSetChanged()
+                    mCurrentScore = ScoreModel(mRound, 0, 0, 0, 0)
+
+                } else {
+                    mCurrentPlayerIndex += 1
                 }
-
-                mCurrentPlayerIndex = 0
-                mRound += 1
-
-
-                mCurrentScore = ScoreModel(mRound,0,0,0,0)
-
+                gameDialog()
             }
-            else{
-                mCurrentPlayerIndex += 1
-            }
-
-
-            gameDialog()
-
-            }
+        }
         )
-        builder.setNegativeButton("Cancel", DialogInterface.OnClickListener { dialog, which -> dialog.cancel() })
+        builder.setNegativeButton("Cancel", DialogInterface.OnClickListener { dialog, _ -> dialog.cancel() })
 
         builder.show()
     }
-
-
 
     // result contract to give back to main activity
     class Contract : ActivityResultContract<GameSetup, GameSetup>() {

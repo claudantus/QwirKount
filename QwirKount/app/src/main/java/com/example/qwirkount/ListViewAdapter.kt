@@ -11,7 +11,7 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 
 
-class ListViewAdapter(var activity: Activity, var productList: ArrayList<ScoreModel>) :
+class ListViewAdapter(var activity: Activity, var productList: MutableList<ScoreModel>) :
     BaseAdapter() {
     override fun getCount(): Int {
         return productList.size
